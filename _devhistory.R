@@ -4,9 +4,9 @@
 usethis::use_git()
 usethis::use_github()
 
-## Create project in Github and follow the instructions
-## Invite collaborators using the Settings directory in Github
-## They can create a project on their computer using version control
+## Create project on Github and follow the instructions (do not create ReadMe, gitignore, etc.)
+## Invite collaborators using the "Settings" directory on Github
+## Collaborators can create a project on their computer using the "Version control" option
 
 ## Buildignore/Gitignore
 usethis::use_build_ignore("_devhistory.R")
@@ -18,11 +18,13 @@ usethis::use_git_ignore("data/.DS_Store")
 ## Create README
 usethis::use_readme_rmd()
 
+## Add license
 usethis::use_mit_license("Nicolas Rode")
 
 ## Add a data directory
 dir.create("data")
 
+## Create file for functions
 usethis::use_r("toto.R")
 usethis::use_r("createpng.R")
 
