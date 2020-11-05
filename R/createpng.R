@@ -1,6 +1,7 @@
 ## Function that takes a png and return a vector with the rows found by tesseract
 createpng <- function(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png"){ ##Path to the input .csv and output .png files
 
+set.seed(1)
 data <- read.csv(csvpath, head=TRUE, sep=";")
 
 head(data)
