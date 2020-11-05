@@ -20,7 +20,7 @@ Authors@R:
       person(given = "Stanislas",
            family = "ZANVO",
            role = c("aut"),
-           email = "zanvostanislas@hotmail.fr",
+           email = "zanvostanislas@yahoo.fr",
            comment = c(ORCID = "YOUR-ORCID-ID")))
 Description: Use optical character recognition to enter data.
 License: MIT + file LICENSE
