@@ -39,3 +39,10 @@ data_temp <- data %>%
 data_temp
 ## Export dataset
 write_csv(data_temp, file= "data/fitness.csv")
+
+
+library(gridExtra)
+png("data/test.png", height = 50*nrow(data_temp), width = 200*ncol(data_temp))
+    grid.table(data_temp,  theme = ttheme_minimal())
+dev.off()
+
