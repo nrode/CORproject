@@ -17,6 +17,6 @@ nbcol <- lapply(vec2, length)
 
 badrows <- which(nbcol>7)
 
-vec[badrows]
+vec_clean <- vec[!nbcol>7]
 
 
