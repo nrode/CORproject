@@ -24,26 +24,6 @@ usethis::use_mit_license("Nicolas Rode")
 dir.create("data")
 
 usethis::use_r("toto.R")
+usethis::use_r("createpng.R")
 
-data <- read.csv("./data/FitnessExperimentalDesign_G60Final.csv", head=TRUE, sep=";")
-
-head(data)
-
-library(tidyverse)
-
-## Clean names
-names(data) <- janitor::make_clean_names(names(data))
-
-## Simulate dataset
-data_temp <- data %>%
-  mutate(nbadrep1=rpois(n=nrow(data), lambda = 20))
-
-data_temp
-## Export dataset
-write_csv(data_temp, file= "data/fitness.csv")
-
-library(gridExtra)
-png("data/test.png", height = 200*nrow(data_temp), width = 500*ncol(data_temp), res=600)
-    grid.table(data_temp,  theme = ttheme_minimal())
-dev.off()
 
