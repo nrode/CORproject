@@ -21,16 +21,18 @@ usethis::use_mit_license("Nicolas Rode")
 ## Add a data directory
 dir.create("data")
 
-usethis::use_r("")
+usethis::use_r("toto.R")
 
 data <- read.csv("./data/FitnessExperimentalDesign_G60Final.csv", head=TRUE, sep=";")
 
 head(data)
 
 library(tidyverse)
+
 ## Clean names
 names(data) <- janitor::make_clean_names(names(data))
 
+## Simulate dataset
 data_temp <- data %>%
   mutate(nbadrep1=rpois(n=nrow(data), lambda = 20))
 
