@@ -1,5 +1,6 @@
-## Function that takes a png and return a vector with the rows found by tesseract
-ocrpng <- function(impagepath="data/test.png"){ ##Path to the png image that will be the argument of the toto function
+## Function that takes a png and return a vector with the rows found in the png by tesseract
+## Inspired from: https://rdrr.io/cran/tesseract/f/vignettes/intro.Rmd
+ocrpng <- function(impagepath = "data/test.png"){ ##Path to the png image that will be the argument of the toto function
 
   ## Test with English training data
   test <- ocr(image = impagepath, engine = tesseract("eng"))
@@ -23,6 +24,7 @@ ocrpng <- function(impagepath="data/test.png"){ ##Path to the png image that wil
     tesseract::ocr(engine = tesseract(language="fra")) %>%
     cat()
 
+  ## Clean image and constrain the type of character that can be present in the document
   text <- input %>%
     image_resize("2000x") %>% ## Clean the image
     image_convert(type = 'Grayscale') %>%
