@@ -1,3 +1,5 @@
+## Framapad: https://mensuel.framapad.org/p/corproject-9jx1?lang=fr
+
 ## Add .Git at the root of the project
 usethis::use_git()
 usethis::use_github()
