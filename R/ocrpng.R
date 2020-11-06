@@ -97,6 +97,10 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
  colnames(df.clean) <- name.col
  ## Export dataset
  write_csv(df.clean, file= outcsv)
+ print("")
+ print("")
+ print("Here is a clean dataframe")
+ print(df.clean)
   return(df.clean)
 }
 
