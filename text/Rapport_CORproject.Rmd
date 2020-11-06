@@ -34,15 +34,6 @@ graphe(csvpath="./data/fitness.csv")
 ## Comparaison des groupes
 
 ```{r pressure, echo=FALSE}
-glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data_temp,family="poisson")
-glmer_mouches
-simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
-plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
-anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
-anova_mouches
-sump<-summary(multcomp::glht(glmer_mouches, mcp("Pop"="Tukey")))
-sump
-sume<-summary(glht(glmer_mouches, mcp("Env"="Tukey")))
-sume
+analyse_stat(csvpath="./data/fitness.csv")
 ```
 
