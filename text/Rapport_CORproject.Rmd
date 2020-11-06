@@ -16,6 +16,8 @@ knitr::opts_chunk$set(error = TRUE)
 devtools::install_deps(upgrade = "never")
 devtools::load_all()
 ```
+# Initial image
+![](./../data/test.png)
 
 # Run OCR
 ## English, no cleaning
