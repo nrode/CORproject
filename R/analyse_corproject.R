@@ -8,6 +8,7 @@ data_temp<-read.table("FitnessExperimentalDesign_G60Final.csv", header=TRUE, sep
 
 # Graphe par Env
 
+
 graphe<- function() {
 
 moy_pop_env<-plyr::ddply(data_temp, c("Pop", "Env"), summarise,
