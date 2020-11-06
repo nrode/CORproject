@@ -5,11 +5,9 @@ date: '`r as.character(format(Sys.Date(), format="%d/%m/%Y"))`'
 output: 
   word_document:
     number_sections: yes
-  html_document:
-    number_sections: yes
     toc: yes
     toc_depth: 3
-    toc_float: true
+
 ---
 
 
@@ -20,13 +18,13 @@ devtools::load_all()
 ```
 
 # Run OCR
-## No cleaning
+## English, no cleaning
 ```{r}
 
-data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, outcsv="./../data/fitnessOCR.csv")
+data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="./../data/fitnessOCR.csv")
 
 ```
-## Cleaning
+## French, cleaning
 ```{r}
 
 data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv="./../data/fitnessOCR.csv")
