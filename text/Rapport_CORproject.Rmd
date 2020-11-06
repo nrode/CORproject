@@ -17,12 +17,12 @@ devtools::load_all()
 
 # Analyse des donnees
 ```{r}
-graphe(csvpath="../../data/fitness.csv")
+graphe(csvpath="./../data/fitness.csv")
 ```
 
 ## Comparaison des groupes
 
 ```{r pressure}
-analyse_stat(csvpath="../../data/fitness.csv")
+analyse_stat(csvpath="./../data/fitness.csv")
 ```
 
