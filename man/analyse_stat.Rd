@@ -2,7 +2,7 @@
 % Please edit documentation in R/analyse_corproject.R
 \name{analyse_stat}
 \alias{analyse_stat}
-\title{Title}
+\title{Analyse}
 \usage{
 analyse_stat(data)
 }
@@ -13,5 +13,5 @@ analyse_stat(data)
 
 }
 \description{
-Title
+Analyse
 }
