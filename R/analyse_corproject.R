@@ -1,20 +1,20 @@
 # Fonctions analyse stat COR Project
 
-setwd("C:/Users/Camille/Documents/Essai/CORproject/data")
-
 # Db usage du sol
-data_temp<-read.table("FitnessExperimentalDesign_G60Final.csv", header=TRUE, sep=";", na.strings="NA")
+
 
 
 # Graphe par Env
 
-graphe<- function(data) {
+graphe<- function(csvpath="./data/fitness.csv") {
 
-moy_pop_env<-plyr::ddply(data, c("Pop", "Env"), summarise,
-                 Moy=mean(Col))
+  data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
+
+moy_pop_env<-plyr::ddply(data, c("pop", "env"), summarise,
+                 Moy=mean(col))
 moy_pop_env
 
-g_pop_env<-ggplot2::ggplot(data=moy_pop_env, aes(x=Pop, y=Moy, fill=Env))+
+g_pop_env<-ggplot2::ggplot(data=moy_pop_env, aes(x=pop, y=Moy, fill=env))+
   geom_bar(stat="identity", color="black")+
   theme_minimal()+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))+

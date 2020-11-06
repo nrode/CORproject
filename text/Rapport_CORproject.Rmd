@@ -27,21 +27,7 @@ Moyenne pour chaque Population dans chaque environnement
 
 # Analyse des donnees
 
-setwd("C:/Users/Camille/Documents/Essai/CORproject/data")
-
-# Db usage du sol
-data_temp<-read.table("FitnessExperimentalDesign_G60Final.csv", header=TRUE, sep=";", na.strings="NA")
-
-moy_pop_env<-plyr::ddply(data_temp, c("Pop", "Env"), summarise,
-                 Moy=mean(Col))
-moy_pop_env
-
-g_pop_env<-ggplot2::ggplot(data=moy_pop_env, aes(x=Pop, y=Moy, fill=Env))+
-  geom_bar(stat="identity", color="black")+
-  theme_minimal()+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  facet_wrap(vars(Env))
-g_pop_env
+graphe(csvpath="./data/fitness.csv")
 
 ```
 
