@@ -66,8 +66,8 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
 
   df.clean <- na.omit(df.raw)
 
- rownames(df) <- 1:nrow(df)
- colnames(df) <- name.col
+ rownames(df.clean) <- 1:nrow(df.clean)
+ colnames(df.clean) <- name.col
 
   return(df.clean)
 }
