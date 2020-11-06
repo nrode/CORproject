@@ -1,5 +1,20 @@
 ## Function that takes a png and return a vector with the rows found in the png by tesseract
 ## Inspired from: https://rdrr.io/cran/tesseract/f/vignettes/intro.Rmd
+#' Title
+#'
+#' @param impagepath
+#' @param n.col
+#' @param lang
+#' @param header
+#'
+#' @return
+#' @export
+#' @import magick
+#' @import tesseract
+#' @importFROM data.table na.omit
+#' @examples
+#'
+
 ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE){ ##Path to the png image that will be the argument of the toto function
 
   ## Test with language training data
