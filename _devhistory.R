@@ -43,4 +43,9 @@ usethis::use_r("toto.R")
 
 usethis::use_r("createpng.R")
 
+usethis::use_r("analyse_corproject.R")
 
+# Packages
+usethis::use_package("plyr")
+devtools::install_deps()
+devtools::load_all()
