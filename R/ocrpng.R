@@ -70,6 +70,5 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
  colnames(df) <- name.col
 
   return(df.clean)
-
 }
 
