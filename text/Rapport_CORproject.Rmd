@@ -11,7 +11,7 @@ output:
 ---
 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 knitr::opts_chunk$set(error = TRUE)
 devtools::install_deps(upgrade = "never")
 devtools::load_all()
@@ -34,12 +34,12 @@ data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  heade
 
 Moyenne pour chaque population dans chaque environnement
 ```{r}
-graphe(csvpath="./../data/fitness.csv")
+graphe(csvpath="./../data/fitnessOCR.csv")
 ```
 
 # Comparaison des groupes
 
 ```{r }
-analyse_stat(csvpath="./../data/fitness.csv")
+analyse_stat(csvpath="./../data/fitnessOCR.csv")
 ```
 

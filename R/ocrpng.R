@@ -22,7 +22,7 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
   ## Test with language training data
   if(is.na(match(lang, tesseract_info()$available))) tesseract_download(lang)
   if(!cleaning){
-    print("OCR with French, no cleaning")
+    print(paste("OCR in", lang, "without cleaning", sep=" "))
     test <- ocr(image = impagepath, engine = tesseract(lang))
     cat(test)
   }else{
@@ -45,7 +45,7 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
 
 
     ## Clean image and constrain the type of character that can be present in the document
-    print("OCR with French and cleaning")
+    print(paste("OCR in", lang, "with cleaning", sep=" "))
     text <- input %>%
       image_resize("2000x") %>% ## Clean the image
       image_convert(type = 'Grayscale') %>%
