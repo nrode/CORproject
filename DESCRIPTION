@@ -31,4 +31,9 @@ RoxygenNote: 7.1.1
 Imports: 
     dplyr,
     plyr,
-    ggplot2
+    ggplot2,
+    magick,
+    lme4,
+    DHARMa,
+    multcomp,
+    car
