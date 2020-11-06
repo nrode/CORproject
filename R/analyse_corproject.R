@@ -8,7 +8,8 @@
 #'
 #' @return
 #' @export
-#'
+#' @import ggplot
+#' @importFrom plyr ddply
 #' @examples
 graphe<- function(csvpath="./data/fitness.csv") {
 
@@ -30,13 +31,16 @@ g_pop_env
 
 # Analyse
 
-#' Title
+#' Analyse
 #'
 #' @param data
 #'
 #' @return
 #' @export
 #' @importFrom lme4 glmer
+#' @importFrom DHARMa plotSimulatedResiduals
+#' @importFrom car Anova
+#' @importFrom multcomp glht
 #' @examples
 analyse_stat<- function(data){
 glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data,family="poisson")
