@@ -15,6 +15,14 @@ usethis::use_git_ignore(".DS_Store")
 usethis::use_build_ignore("data/.DS_Store")
 usethis::use_git_ignore("data/.DS_Store")
 
+## Open the description file to manually edit the metadata
+usethis::edit_file("DESCRIPTION")
+
+## Creates a R file to create R documentation (check with Nina)
+usethis::use_package_doc()
+## Create a man file for the help page and update NAMESPACE (check with Nina)
+devtools::document()
+
 ## Create README
 usethis::use_readme_rmd()
 
