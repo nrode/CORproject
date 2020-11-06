@@ -31,6 +31,7 @@ usethis::use_mit_license("Nicolas Rode")
 
 ## Add a data directory
 dir.create("data")
+dir.create("text")
 
 
 ## Install dependencies
