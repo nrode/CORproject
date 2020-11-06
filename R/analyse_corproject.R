@@ -48,11 +48,11 @@ g_pop_env
 analyse_stat<- function(csvpath="./data/fitness.csv"){
   data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
   glmer_mouches<-lme4::glmer(nbadrep1~env+pop+(1|block),data=data,family="poisson")
-  glmer_mouches
+  print(glmer_mouches)
   simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
   plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
   anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
-  anova_mouches
+  print(anova_mouches)
   sump<-summary(multcomp::glht(glmer_mouches, linfct = mcp(pop="Tukey")))
   sump
   sume<-summary(multcomp::glht(glmer_mouches, linfct = mcp("env"="Tukey")))
