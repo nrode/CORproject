@@ -20,13 +20,18 @@ devtools::load_all()
 ```
 
 # Run OCR
-
+## No cleaning
 ```{r}
 
 data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, outcsv="./../data/fitnessOCR.csv")
 
 ```
+## Cleaning
+```{r}
 
+data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv="./../data/fitnessOCR.csv")
+
+```
 # Visualisation des donnees
 
 Moyenne pour chaque population dans chaque environnement

@@ -7,6 +7,7 @@
 #' @param lang
 #' @param header
 #' @param outcsv
+#' @param cleaning
 #'
 #' @return
 #' @export
@@ -16,28 +17,35 @@
 #' @examples
 #'
 
-ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE, outcsv="data/fitnessOCR.csv"){ ##Path to the png image that will be the argument of the toto function
+ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="data/fitnessOCR.csv"){ ##Path to the png image that will be the argument of the toto function
 
   ## Test with language training data
   if(is.na(match(lang, tesseract_info()$available))) tesseract_download(lang)
-  test <- ocr(image = impagepath, engine = tesseract(lang))
-  cat(head(test))
+  if(cleaning){
+    print("OCR with French, no cleaning")
+    test <- ocr(image = impagepath, engine = tesseract(lang))
+    cat(test)
+  }else{
+
+
+
 
   ## Clean image with magick
   input <- image_read(impagepath)
-  image_browse(input)
+  #image_display(input)
 
-  input %>%
-    image_resize("2000x") %>%     ## Clean the image
-    image_convert(type = 'Grayscale') %>%
-    image_trim(fuzz = 40) %>%
-    image_write(format = 'png', density = '300x300') %>%
-    tesseract::ocr(engine = tesseract(language=lang)) %>%
-    head() %>%
-    cat()
+#  input %>%
+#    image_resize("2000x") %>%     ## Clean the image
+#    image_convert(type = 'Grayscale') %>%
+#    image_trim(fuzz = 40) %>%
+#    image_write(format = 'png', density = '300x300') %>%
+#    tesseract::ocr(engine = tesseract(language=lang)) %>%
+#    head() %>%
+#    cat()
 
 
   ## Clean image and constrain the type of character that can be present in the document
+  print("OCR with French and cleaning")
   text <- input %>%
     image_resize("2000x") %>% ## Clean the image
     image_convert(type = 'Grayscale') %>%
@@ -47,7 +55,7 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
       engine = tesseract(language=lang,
       options = list(tessedit_char_whitelist = paste(c(" .0123456789", letters, toupper(letters)), collapse=""))))## Specify which number and letters are allowed
   cat(text)
-
+  }
   vec <- unlist(strsplit(text, split="\n"))
 
   ## Replace double space by a single space

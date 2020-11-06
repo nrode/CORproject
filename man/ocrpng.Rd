@@ -9,11 +9,12 @@ ocrpng(
   n.col = NULL,
   lang = "eng",
   header = TRUE,
+  cleaning = FALSE,
   outcsv = "data/fitnessOCR.csv"
 )
 }
 \arguments{
-\item{outcsv}{}
+\item{cleaning}{}
 }
 \value{
 
