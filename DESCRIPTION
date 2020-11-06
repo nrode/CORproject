@@ -29,11 +29,15 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
+    magrittr,
+    magick,
+    tesseract,
     dplyr,
     plyr,
     ggplot2,
     lme4,
     DHARMa,
     multcomp,
-    car,
-    knitr
+    knitr,
+    car
+
