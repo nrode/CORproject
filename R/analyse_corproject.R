@@ -1,11 +1,16 @@
 # Fonctions analyse stat COR Project
 
-# Db usage du sol
-
-
-
 # Graphe par Env
 
+#' Title
+#'
+#' @param csvpath
+#'
+#' @return
+#' @export
+#' @import ggplot
+#' @importFrom plyr ddply
+#' @examples
 graphe<- function(csvpath="./data/fitness.csv") {
 
   data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
@@ -26,6 +31,17 @@ g_pop_env
 
 # Analyse
 
+#' Analyse
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#' @importFrom lme4 glmer
+#' @importFrom DHARMa plotSimulatedResiduals
+#' @importFrom car Anova
+#' @importFrom multcomp glht
+#' @examples
 analyse_stat<- function(data){
 glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data,family="poisson")
 glmer_mouches
