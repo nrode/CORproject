@@ -21,7 +21,7 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
   ## Test with language training data
   if(is.na(match(lang, tesseract_info()$available))) tesseract_download(lang)
   test <- ocr(image = impagepath, engine = tesseract(lang))
-  cat(test)
+  cat(head(test))
 
   ## Clean image with magick
   input <- image_read(impagepath)
@@ -33,7 +33,9 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
     image_trim(fuzz = 40) %>%
     image_write(format = 'png', density = '300x300') %>%
     tesseract::ocr(engine = tesseract(language=lang)) %>%
+    head() %>%
     cat()
+
 
   ## Clean image and constrain the type of character that can be present in the document
   text <- input %>%

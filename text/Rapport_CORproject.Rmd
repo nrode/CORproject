@@ -29,7 +29,7 @@ data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  heade
 
 # Visualisation des donnees
 
-Moyenne pour chaque Population dans chaque environnement
+Moyenne pour chaque population dans chaque environnement
 ```{r}
 graphe(csvpath="./../data/fitness.csv")
 ```
