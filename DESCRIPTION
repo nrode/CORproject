@@ -39,5 +39,6 @@ Imports:
     DHARMa,
     multcomp,
     knitr,
-    car
+    car,
+    janitor
 
