@@ -29,13 +29,13 @@ createpng(csvpath="./../data/FitnessExperimentalDesign_G60Final.csv", outputpng=
 ## English, no cleaning
 ```{r}
 
-data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="./../data/fitnessOCR.csv")
+data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="./../output/fitnessOCR.csv")
 
 ```
 ## French, cleaning
 ```{r}
 
-data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv="./../data/fitnessOCR.csv")
+data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv="./../output/fitnessOCR.csv")
 
 ```
 # Visualisation des donnees

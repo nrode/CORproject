@@ -32,14 +32,14 @@ usethis::use_mit_license("Nicolas Rode")
 ## Add a data directory
 dir.create("data")
 dir.create("text")
-
+dir.create("output")
 
 ## Install dependencies
 devtools::install_deps()
 
 
 ## Create file for functions
-usethis::use_r("toto.R")
+usethis::use_r("ocrpng.R")
 
 usethis::use_r("createpng.R")
 

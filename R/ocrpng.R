@@ -17,7 +17,7 @@
 #' @examples
 #'
 
-ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="data/fitnessOCR.csv"){ ##Path to the png image that will be the argument of the toto function
+ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="/output/fitnessOCR.csv"){ ##Path to the png image that will be the argument of the toto function
 
   ## Test with language training data
   if(is.na(match(lang, tesseract_info()$available))) tesseract_download(lang)
