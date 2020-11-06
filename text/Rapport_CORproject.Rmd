@@ -27,21 +27,22 @@ Moyenne pour chaque Population dans chaque environnement
 
 # Analyse des donnees
 
-setwd("C:/Users/Camille/Documents/Essai/CORproject/data")
-
-# Db usage du sol
-data_temp<-read.table("FitnessExperimentalDesign_G60Final.csv", header=TRUE, sep=";", na.strings="NA")
-
-
-graphe()
+graphe(csvpath="./data/fitness.csv")
 
 ```
 
 ## Comparaison des groupes
 
-
-
 ```{r pressure, echo=FALSE}
-analyse_stat
+glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data_temp,family="poisson")
+glmer_mouches
+simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
+plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
+anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
+anova_mouches
+sump<-summary(multcomp::glht(glmer_mouches, mcp("Pop"="Tukey")))
+sump
+sume<-summary(glht(glmer_mouches, mcp("Env"="Tukey")))
+sume
 ```
 
