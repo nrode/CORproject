@@ -42,6 +42,7 @@ g_pop_env
 #' @importFrom car Anova
 #' @importFrom multcomp glht
 #' @examples
+#
 analyse_stat<- function(data){
 glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data,family="poisson")
 glmer_mouches
