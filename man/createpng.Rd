@@ -10,7 +10,9 @@ createpng(
 )
 }
 \arguments{
-\item{x}{Numeric vector}
+\item{csvpath}{path to the .csv file}
+
+\item{outputpng}{path to the output png}
 }
 \value{
 A png with the simulated data
