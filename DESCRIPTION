@@ -40,5 +40,6 @@ Imports:
     multcomp,
     knitr,
     car,
-    janitor
-
+    janitor,
+    gridExtra,
+    readr

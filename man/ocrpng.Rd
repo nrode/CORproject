@@ -10,7 +10,7 @@ ocrpng(
   lang = "eng",
   header = TRUE,
   cleaning = FALSE,
-  outcsv = "data/fitnessOCR.csv"
+  outcsv = "/output/fitnessOCR.csv"
 )
 }
 \arguments{

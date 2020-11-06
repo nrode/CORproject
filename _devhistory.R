@@ -56,5 +56,13 @@ usethis::use_package("glht")
 usethis::use_package("car")
 usethis::use_package("janitor")
 usethis::use_package("here")
+usethis::use_package("gridExtra")
+usethis::use_package("readr")
+## Update NAMESPACE
+devtools::document()
+
+## Install dependencies
 devtools::install_deps()
 
+#@ Check package
+devtools::check()

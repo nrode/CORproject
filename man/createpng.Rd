@@ -6,7 +6,7 @@
 \usage{
 createpng(
   csvpath = "data/FitnessExperimentalDesign_G60Final.csv",
-  outputpng = "data/test.png"
+  outputpng = here::here("data", "testnew.png")
 )
 }
 \arguments{
