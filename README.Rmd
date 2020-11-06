@@ -18,37 +18,28 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of CORproject is to ...
+The goal of CORproject is to conduct simple statistical analyses based on a table based on tabular data in PNG format. The data is read using optical character recognition based on the [tesseract](https://github.com/tesseract-ocr/tesseract) package. The data is analyzed using an ANOVA. The analysis is summarized in a Rmd report.
 
 ## Installation
 
-You can install the released version of CORproject from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of CORproject from [GitHub](https://github.com/nrode/CORproject) with:
 
 ``` r
-install.packages("CORproject")
+install_github("nrode/CORproject")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ```{r example}
 library(CORproject)
-## basic example code
+
+## Simulate data and save it as png
+createpng(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png")
+
+## Read the data using OCR and output a vector
+data <- ocrpng(impagepath = "data/test.png")
+
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
