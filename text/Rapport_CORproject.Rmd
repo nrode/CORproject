@@ -20,7 +20,8 @@ devtools::load_all()
 # Create png
 ## Simulate data
 ```{r, message=FALSE}
-createpng(csvpath="./../data/FitnessExperimentalDesign_G60Final.csv", outputpng="./../data/testnew.png")
+createpng(csvpath=here::here("data", "FitnessExperimentalDesign_G60Final.csv"), outputpng=here::here("data", "testnew.png"))
+
 ```
 ## Initial image
 ![](./../data/testnew.png)
@@ -29,25 +30,25 @@ createpng(csvpath="./../data/FitnessExperimentalDesign_G60Final.csv", outputpng=
 ## English, no cleaning
 ```{r}
 
-data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv="./../output/fitnessOCR.csv")
+data <- ocrpng(impagepath = here::here("data", "test.png"), n.col=NULL, lang="eng",  header=TRUE, cleaning=FALSE, outcsv=here::here("output", "fitnessOCR.csv"))
 
 ```
 ## French, cleaning
 ```{r}
 
-data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv="./../output/fitnessOCR.csv")
+data <- ocrpng(impagepath = here::here("data", "test.png"), n.col=NULL, lang="fra",  header=TRUE, cleaning=TRUE, outcsv=here::here("output", "fitnessOCR.csv"))
 
 ```
 # Visualisation des donnees
 
 Moyenne pour chaque population dans chaque environnement
 ```{r}
-graphe(csvpath="./../data/fitness.csv")
+graphe(csvpath=here::here("data", "fitness.csv"))
 ```
 
 # Comparaison des groupes
 
 ```{r }
-analyse_stat(csvpath="./../data/fitness.csv")
+analyse_stat(csvpath=here::here("data", "fitness.csv"))
 ```
 

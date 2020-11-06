@@ -42,7 +42,7 @@ g_pop_env
 #' @importFrom lme4 glmer
 #' @importFrom DHARMa plotSimulatedResiduals
 #' @importFrom car Anova
-#' @importFrom multcomp glht
+#' @import multcomp
 #' @examples
 #
 analyse_stat<- function(csvpath="./data/fitness.csv"){
