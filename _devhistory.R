@@ -32,6 +32,11 @@ usethis::use_mit_license("Nicolas Rode")
 ## Add a data directory
 dir.create("data")
 
+
+## Install dependencies
+devtools::install_deps()
+
+
 ## Create file for functions
 usethis::use_r("toto.R")
 
