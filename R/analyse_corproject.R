@@ -45,18 +45,19 @@ g_pop_env
 #' @importFrom multcomp glht
 #' @examples
 #
-analyse_stat<- function(data){
-glmer_mouches<-lme4::glmer(col~env+pop+(1|block),data=data,family="poisson")
-glmer_mouches
-simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
-plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
-anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
-anova_mouches
-sump<-summary(multcomp::glht(glmer_mouches, mcp("Pop"="Tukey")))
-sump
-sume<-summary(glht(glmer_mouches, mcp("Env"="Tukey")))
-sume
-return(plot, anova_mouches, sump,sume)
+analyse_stat<- function(csvpath="./data/fitness.csv"){
+  data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
+  glmer_mouches<-lme4::glmer(nbadrep1~env+pop+(1|block),data=data,family="poisson")
+  glmer_mouches
+  simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
+  plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
+  anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
+  anova_mouches
+  sump<-summary(multcomp::glht(glmer_mouches, mcp("pop"="Tukey")))
+  sump
+  sume<-summary(glht(glmer_mouches, mcp("env"="Tukey")))
+  sume
+  return(plot, anova_mouches, sump,sume)
 }
 
 
