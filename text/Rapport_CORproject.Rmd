@@ -23,6 +23,6 @@ graphe(csvpath="./../data/fitness.csv")
 ## Comparaison des groupes
 
 ```{r pressure}
-analyse_stat(csvpath="./../data/fitness.csv")
+analyse_stat(data="./../data/fitness.csv")
 ```
 
