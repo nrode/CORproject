@@ -41,5 +41,6 @@ usethis::use_r("analyse_corproject.R")
 
 # Packages
 usethis::use_package("plyr")
+usethis::use_package("magick")
 devtools::install_deps()
 devtools::load_all()
