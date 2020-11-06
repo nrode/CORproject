@@ -83,7 +83,8 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
 
  rownames(df.clean) <- 1:nrow(df.clean)
  colnames(df.clean) <- name.col
-
+ ## Export dataset
+ write_csv(df.clean, file= "data/fitnessOCR.csv")
   return(df.clean)
 }
 
