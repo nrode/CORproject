@@ -55,5 +55,6 @@ usethis::use_package("multcomp")
 usethis::use_package("glht")
 usethis::use_package("car")
 usethis::use_package("janitor")
+usethis::use_package("here")
 devtools::install_deps()
-devtools::load_all()
+
