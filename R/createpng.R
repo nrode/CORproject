@@ -1,4 +1,17 @@
-## Function that takes a png and return a vector with the rows found by tesseract
+#'@title createpng
+#'
+#'@description Function that takes a png and return a vector with the rows found by tesseract
+#'
+#'@param x Numeric vector
+#'
+#'@return A png with the simulated data
+#'
+#'@export
+#'
+#'@examples
+#'createpng(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png")
+
+
 createpng <- function(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png"){ ##Path to the input .csv and output .png files
 
 set.seed(1)

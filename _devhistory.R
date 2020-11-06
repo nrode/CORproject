@@ -34,6 +34,7 @@ dir.create("data")
 
 ## Create file for functions
 usethis::use_r("toto.R")
+
 usethis::use_r("createpng.R")
 
 
