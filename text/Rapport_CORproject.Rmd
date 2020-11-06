@@ -16,7 +16,13 @@ knitr::opts_chunk$set(error = TRUE)
 devtools::install_deps(upgrade = "never")
 devtools::load_all()
 ```
-# Initial image
+
+# Create png
+## Simulate data
+```{r, message=FALSE}
+createpng(csvpath="./../data/FitnessExperimentalDesign_G60Final.csv", outputpng="./../data/testnew.png")
+```
+## Initial image
 ![](./../data/testnew.png)
 
 # Run OCR

@@ -38,7 +38,7 @@ data_temp <- data %>%
 
 data_temp
 ## Export dataset
-write_csv(data_temp, file= "data/fitness.csv")
+write_csv(data_temp, file= outputpng)
 
 library(gridExtra)
 png(outputpng, height = 200*nrow(data_temp), width = 500*ncol(data_temp), res=600)
