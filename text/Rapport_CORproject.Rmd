@@ -17,7 +17,7 @@ devtools::install_deps(upgrade = "never")
 devtools::load_all()
 ```
 # Initial image
-![](./../data/test.png)
+![](./../data/testnew.png)
 
 # Run OCR
 ## English, no cleaning
@@ -36,12 +36,12 @@ data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  heade
 
 Moyenne pour chaque population dans chaque environnement
 ```{r}
-graphe(csvpath="./../data/fitnessOCR.csv")
+graphe(csvpath="./../data/fitness.csv")
 ```
 
 # Comparaison des groupes
 
 ```{r }
-analyse_stat(csvpath="./../data/fitnessOCR.csv")
+analyse_stat(csvpath="./../data/fitness.csv")
 ```
 

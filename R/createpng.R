@@ -25,6 +25,8 @@ data <- read.csv(csvpath, head=TRUE, sep=";")
 
 head(data)
 
+data <- data[1:10, ]
+
 library(tidyverse)
 
 ## Clean names

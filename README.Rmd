@@ -34,7 +34,7 @@ install_github("nrode/CORproject")
 library(CORproject)
 
 ## Simulate data and save it as png
-createpng(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png")
+createpng(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/testnew.png")
 
 ## Read the data using OCR and output a vector
 data <- ocrpng(impagepath = "data/test.png", n.col=NULL, lang="fra",  header=TRUE)
