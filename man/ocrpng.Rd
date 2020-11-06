@@ -4,10 +4,16 @@
 \alias{ocrpng}
 \title{Title}
 \usage{
-ocrpng(impagepath = "data/test.png", n.col = NULL, lang = "eng", header = TRUE)
+ocrpng(
+  impagepath = "data/test.png",
+  n.col = NULL,
+  lang = "eng",
+  header = TRUE,
+  outcsv = "data/fitnessOCR.csv"
+)
 }
 \arguments{
-\item{header}{}
+\item{outcsv}{}
 }
 \value{
 

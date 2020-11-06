@@ -4,10 +4,10 @@
 \alias{analyse_stat}
 \title{Analyse}
 \usage{
-analyse_stat(data)
+analyse_stat(csvpath = "./data/fitness.csv")
 }
 \arguments{
-\item{data}{}
+\item{csvpath}{}
 }
 \value{
 

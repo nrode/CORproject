@@ -12,9 +12,6 @@ output:
     toc_float: true
 ---
 
-## Visualisation des donnees
-
-Moyenne pour chaque Population dans chaque environnement
 
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
@@ -22,12 +19,22 @@ devtools::install_deps(upgrade = "never")
 devtools::load_all()
 ```
 
-# Analyse des donnees
+# Run OCR
+
+```{r}
+
+data <- ocrpng(impagepath = "./../data/test.png", n.col=NULL, lang="fra",  header=TRUE, outcsv="./../data/fitnessOCR.csv")
+
+```
+
+# Visualisation des donnees
+
+Moyenne pour chaque Population dans chaque environnement
 ```{r}
 graphe(csvpath="./../data/fitness.csv")
 ```
 
-## Comparaison des groupes
+# Comparaison des groupes
 
 ```{r }
 analyse_stat(csvpath="./../data/fitness.csv")

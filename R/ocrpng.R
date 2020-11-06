@@ -6,6 +6,7 @@
 #' @param n.col
 #' @param lang
 #' @param header
+#' @param outcsv
 #'
 #' @return
 #' @export
@@ -15,7 +16,7 @@
 #' @examples
 #'
 
-ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE){ ##Path to the png image that will be the argument of the toto function
+ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header=TRUE, outcsv="data/fitnessOCR.csv"){ ##Path to the png image that will be the argument of the toto function
 
   ## Test with language training data
   if(is.na(match(lang, tesseract_info()$available))) tesseract_download(lang)
@@ -84,7 +85,7 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
  rownames(df.clean) <- 1:nrow(df.clean)
  colnames(df.clean) <- name.col
  ## Export dataset
- write_csv(df.clean, file= "data/fitnessOCR.csv")
+ write_csv(df.clean, file= outcsv)
   return(df.clean)
 }
 
