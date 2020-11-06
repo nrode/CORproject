@@ -44,7 +44,7 @@ g_pop_env
 #' @examples
 #
 analyse_stat<- function(data){
-glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data,family="poisson")
+glmer_mouches<-lme4::glmer(col~env+pop+(1|block),data=data,family="poisson")
 glmer_mouches
 simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
 plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)

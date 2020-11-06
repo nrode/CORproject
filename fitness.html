@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<p>block,rack,pop,env,col,nbadrep1
+1,1,CRC,fraise,1,17
+1,1,CEA,cerise,2,25
+1,1,CRB,cerise,3,25
+1,1,CEC,cerise,4,21
+1,1,FRB,cranberry,5,13
+1,1,FRA,fraise,6,22
+1,1,CEB,fraise,7,23
+1,1,FRC,cranberry,8,22
+1,1,CRE,cranberry,9,18
+1,2,CRB,cranberry,1,26
+1,2,CEA,fraise,2,21
+1,2,CEC,cranberry,3,17
+1,2,CRC,cerise,4,18
+1,2,CEB,cranberry,5,18
+1,2,FRB,fraise,6,21
+1,2,FRC,fraise,7,16
+1,2,FRA,cerise,8,23
+1,2,CRE,cerise,9,22
+1,3,FRB,cerise,1,24
+1,3,FRC,cerise,2,23
+1,3,CRB,fraise,3,20
+1,3,CEA,cranberry,4,11
+1,3,CEC,fraise,5,22
+1,3,CRC,cranberry,6,24
+1,3,CEB,cerise,7,16
+1,3,FRA,cranberry,8,17
+1,3,CRE,fraise,9,18
+2,4,FRA,cranberry,1,17
+2,4,CRE,cranberry,2,21
+2,4,CEA,cranberry,3,19
+2,4,CEB,fraise,4,13
+2,4,FRB,cerise,5,24
+2,4,CRC,cerise,6,18
+2,4,CRB,fraise,7,25
+2,4,FRC,fraise,8,18
+2,4,CEC,cerise,9,27
+2,5,FRB,fraise,1,22
+2,5,CRE,fraise,2,17
+2,5,CRC,cranberry,3,22
+2,5,FRA,cerise,4,16
+2,5,CEB,cerise,5,13
+2,5,CEC,cranberry,6,23
+2,5,FRC,cranberry,7,19
+2,5,CEA,fraise,8,23
+2,5,CRB,cerise,9,21
+2,6,CRE,cerise,1,17
+2,6,FRA,fraise,2,16
+2,6,CEA,cerise,3,26
+2,6,FRC,cerise,4,28
+2,6,CRC,fraise,5,18
+2,6,CEC,fraise,6,15
+2,6,CEB,cranberry,7,14
+2,6,CRB,cranberry,8,30
+2,6,FRB,cranberry,9,19
+3,7,CEB,fraise,1,23
+3,7,FRA,cranberry,2,20
+3,7,CRB,fraise,3,16
+3,7,FRB,cerise,4,13
+3,7,CRE,cranberry,5,26
+3,7,CRC,cerise,6,20
+3,7,CEA,cranberry,7,29
+3,7,FRC,fraise,8,22
+3,7,CEC,cerise,9,16
+3,8,FRB,fraise,1,19
+3,8,FRA,cerise,2,22
+3,8,CRE,fraise,3,24
+3,8,CEB,cerise,4,20
+3,8,CRB,cerise,5,19
+3,8,CRC,cranberry,6,15
+3,8,CEA,fraise,7,17
+3,8,CEC,cranberry,8,25
+3,8,FRC,cranberry,9,23
+3,9,CRE,cerise,1,19
+3,9,CEB,cranberry,2,18
+3,9,CEA,cerise,3,18
+3,9,FRC,cerise,4,24
+3,9,FRA,fraise,5,18
+3,9,CRC,fraise,6,25
+3,9,CEC,fraise,7,22
+3,9,CRB,cranberry,8,25
+3,9,FRB,cranberry,9,16
+4,10,CEB,fraise,1,25
+4,10,FRA,cranberry,2,23
+4,10,FRB,cerise,3,27
+4,10,CRC,cerise,4,22
+4,10,CEC,cerise,5,14
+4,10,CRE,cranberry,6,21
+4,10,CRB,fraise,7,24
+4,10,FRC,fraise,8,23
+4,10,CEA,cranberry,9,16
+4,11,FRA,cerise,1,15
+4,11,FRB,fraise,2,14
+4,11,CEB,cerise,3,27
+4,11,CRE,fraise,4,23
+4,11,CRC,cranberry,5,24
+4,11,CEC,cranberry,6,21
+4,11,CEA,fraise,7,27
+4,11,CRB,cerise,8,17
+4,11,FRC,cranberry,9,20
+4,12,CRE,cerise,1,20
+4,12,CEA,cerise,2,12
+4,12,FRA,fraise,3,18
+4,12,CEB,cranberry,4,18
+4,12,CRB,cranberry,5,18
+4,12,CRC,fraise,6,22
+4,12,FRC,cerise,7,19
+4,12,CEC,fraise,8,17
+4,12,FRB,cranberry,9,15</p>
+
+</body>
+
+</html>
