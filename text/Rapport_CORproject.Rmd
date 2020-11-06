@@ -11,18 +11,18 @@ Moyenne pour chaque Population dans chaque environnement
 
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
+devtools::install_deps(upgrade = "never")
 devtools::load_all()
 ```
 
 # Analyse des donnees
 ```{r}
-graphe("./data/fitness.csv")
-
+graphe(csvpath="../../data/fitness.csv")
 ```
 
 ## Comparaison des groupes
 
 ```{r pressure}
-analyse_stat(csvpath="./data/fitness.csv")
+analyse_stat(csvpath="../../data/fitness.csv")
 ```
 

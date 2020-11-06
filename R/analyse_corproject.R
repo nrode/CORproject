@@ -8,7 +8,7 @@
 #'
 #' @return
 #' @export
-#' @import ggplot
+#' @import ggplot2
 #' @importFrom plyr ddply
 #' @examples
 graphe<- function(csvpath="./data/fitness.csv") {
