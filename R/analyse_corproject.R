@@ -10,12 +10,14 @@
 #' @export
 #' @import ggplot2
 #' @importFrom plyr ddply
+#' @importFrom dplyr summarise
+#'
 #' @examples
 graphe<- function(csvpath="./data/fitness.csv") {
 
   data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
 
-moy_pop_env<-plyr::ddply(data, c("pop", "env"), summarise,
+moy_pop_env<-plyr::ddply(data, c("pop", "env"), dplyr::summarise,
                  Moy=mean(col))
 moy_pop_env
 
@@ -23,7 +25,7 @@ g_pop_env<-ggplot2::ggplot(data=moy_pop_env, aes(x=pop, y=Moy, fill=env))+
   geom_bar(stat="identity", color="black")+
   theme_minimal()+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  facet_wrap(vars(Env))
+  facet_wrap(vars(env))
 g_pop_env
 
 }
