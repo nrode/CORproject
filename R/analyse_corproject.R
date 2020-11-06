@@ -23,21 +23,21 @@ g_pop_env
 
 }
 
-graphe(data_temp)
 
 # Analyse
 
-analyse_stat<- function(data_temp){
-glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data_temp,family="poisson")
+analyse_stat<- function(data){
+glmer_mouches<-lme4::glmer(Col~Env+Pop+(1|Block),data=data,family="poisson")
 glmer_mouches
 simulationOutput <- DHARMa::simulateResiduals(fittedModel = glmer_mouches, n = 250) # QQplot
-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
+plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
 anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
 anova_mouches
 sump<-summary(multcomp::glht(glmer_mouches, mcp("Pop"="Tukey")))
 sump
 sume<-summary(glht(glmer_mouches, mcp("Env"="Tukey")))
 sume
+return(plot, anova_mouches, sump,sume)
 }
 
 
