@@ -35,7 +35,7 @@ g_pop_env
 
 #' Analyse
 #'
-#' @param data
+#' @param csvpath
 #'
 #' @return
 #' @export
