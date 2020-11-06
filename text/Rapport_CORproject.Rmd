@@ -5,29 +5,16 @@ date: "6 novembre 2020"
 output: word_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
-```{r, echo=FALSE,include=FALSE}
-library(plyr)
-library(ggplot2)
-library(lme4)
-library(DHARMa)
-library(lsmeans)
-library(multcomp)
-library(car)
-```
 ## Visualisation des donnees
 
 Moyenne pour chaque Population dans chaque environnement
 
 ```{r, echo=FALSE}
+knitr::opts_chunk$set(error = TRUE)
 
 # Analyse des donnees
 
-graphe(csvpath="./data/fitness.csv")
+graphe("./data/fitness.csv")
 
 ```
 

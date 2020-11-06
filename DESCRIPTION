@@ -35,4 +35,5 @@ Imports:
     lme4,
     DHARMa,
     multcomp,
-    car
+    car,
+    knitr

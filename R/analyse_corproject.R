@@ -1,12 +1,8 @@
 # Fonctions analyse stat COR Project
 
-# Db usage du sol
-
-
-
 # Graphe par Env
 
-graphe<- function(csvpath="./data/fitness.csv") {
+graphe<- function(csvpath) {
 
 data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
 
@@ -26,7 +22,7 @@ g_pop_env
 
 # Analyse
 
-analyse_stat<- function(csvpath="./data/fitness.csv"){
+analyse_stat<- function(csvpath){
   data<-read.table(csvpath, header=TRUE, sep=",", na.strings="NA")
 
 glmer_mouches<-lme4::glmer(nbadrep1~env+pop+(1|block),data,family="poisson")
