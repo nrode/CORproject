@@ -2,9 +2,15 @@
 #'
 #'@description Function that takes a png and return a vector with the rows found by tesseract
 #'
-#'@param x Numeric vector
+#'@param csvpath path to the .csv file
+#'@param outputpng path to the output png
 #'
 #'@return A png with the simulated data
+#'
+#'@importFrom janitor make_clean_names
+#'@importFrom dplyr mutate
+#'@importFrom readr write_csv
+#'@importFrom gridExtra grid.table
 #'
 #'@export
 #'
