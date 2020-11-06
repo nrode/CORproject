@@ -29,6 +29,12 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
+<<<<<<< HEAD
     magrittr,
     magick,
     tesseract
+=======
+    dplyr,
+    plyr,
+    ggplot2
+>>>>>>> 9edac14fe125e7f30614fa3ce218e53b24f22ada
