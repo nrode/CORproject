@@ -60,11 +60,15 @@ ocrpng <- function(impagepath = "data/test.png", n.col=NULL, lang="eng",  header
     }
   vec3 <- lapply(vec2, `length<-`, max(lengths(vec2)))
 
-  df <- as.data.frame(t(as.data.frame(vec3)))
+
+
+  df.raw <- as.data.frame(t(as.data.frame(vec3)))
+
+  df.clean <- na.omit(df.raw)
 
  rownames(df) <- 1:nrow(df)
  colnames(df) <- name.col
 
-  return(df)
+  return(df.clean)
 }
 
