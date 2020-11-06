@@ -9,6 +9,7 @@ output: word_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ```{r, echo=FALSE,include=FALSE}
 library(plyr)
 library(ggplot2)
