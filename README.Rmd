@@ -37,7 +37,7 @@ library(CORproject)
 createpng(csvpath="data/FitnessExperimentalDesign_G60Final.csv", outputpng="data/test.png")
 
 ## Read the data using OCR and output a vector
-data <- ocrpng(impagepath = "data/test.png")
+data <- ocrpng(impagepath = "data/test.png", n.col=NULL, lang="fra",  header=TRUE)
 
 ```
 
