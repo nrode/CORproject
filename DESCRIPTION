@@ -1,5 +1,5 @@
 Package: CORproject
-Title: What the Package Does (One Line, Title Case)
+Title: Read PNG Using COR And Build A Summary Rmd
 Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Nicolas",
@@ -22,7 +22,7 @@ Authors@R:
            role = c("aut"),
            email = "zanvostanislas@yahoo.fr",
            comment = c(ORCID = "YOUR-ORCID-ID")))
-Description: Use optical character recognition to enter data.
+Description: Provide data and code for optical character recognition of data in png format.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
