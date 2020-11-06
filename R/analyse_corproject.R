@@ -53,11 +53,11 @@ analyse_stat<- function(csvpath="./data/fitness.csv"){
   plot<-DHARMa::plotSimulatedResiduals(simulationOutput = simulationOutput, quantreg = TRUE)
   anova_mouches<-car::Anova(glmer_mouches, test="Chisq")
   anova_mouches
-  sump<-summary(multcomp::glht(glmer_mouches, mcp("pop"="Tukey")))
+  sump<-summary(multcomp::glht(glmer_mouches, linfct = mcp(pop="Tukey")))
   sump
-  sume<-summary(glht(glmer_mouches, mcp("env"="Tukey")))
+  sume<-summary(multcomp::glht(glmer_mouches, linfct = mcp("env"="Tukey")))
   sume
-  return(plot, anova_mouches, sump,sume)
+  return(plot, anova_mouches, sump, sume)
 }
 
 

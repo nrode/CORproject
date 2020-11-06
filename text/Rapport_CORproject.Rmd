@@ -1,8 +1,15 @@
 ---
 title: "Rapport_CORproject"
 author: "Diego Ayala, Camille Imbert, Nicolas Rode, Stan Zanvo"
-date: "6 novembre 2020"
-output: word_document
+date: '`r as.character(format(Sys.Date(), format="%d/%m/%Y"))`'
+output: 
+  word_document:
+    number_sections: yes
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: true
 ---
 
 ## Visualisation des donnees
@@ -22,7 +29,7 @@ graphe(csvpath="./../data/fitness.csv")
 
 ## Comparaison des groupes
 
-```{r pressure}
-analyse_stat(data="./../data/fitness.csv")
+```{r }
+analyse_stat(csvpath="./../data/fitness.csv")
 ```
 
